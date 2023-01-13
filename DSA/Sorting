@@ -3,7 +3,7 @@ Sorting
     -There are many sorting methods to use based on the requirement and time complexities.
 
 Bubble Sort
-    -Its a comparision type sorting method
+    -Its a comparision type sorting method where we compare elements to sort.
     -Also known as sinking sort or exchange sort
     -we compare each element with the next element, if the arr[i]>arr[i+1] we swap the elements
 
