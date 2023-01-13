@@ -1,0 +1,54 @@
+Searching Algorithms:
+
+Linear Search-
+    -Start from the first element and increment till you find the element you are looking for.
+    -Time Complexity
+        Best- O(1) if the first element of array is the target
+        Worst- O(n) - where n is the size of the array
+                    -if the target is not in array or the last element of array is the target
+                    -n no of comparisons will be made
+
+Binary Search-
+    -Used for sorted arrays
+
+    Algorithm:
+        -take 2 pointers, assign one to start of array(start), and one to end of array(end)
+        -take the middle element of the array (int value of(start+end)/2)
+        -compare if the target is equal to the middle element, if yes return the element
+        -else if less than middle value then the end becomes (mid-1) and repeat
+        -if target>mid then start=mid+1 and repeat the steps till element found.
+        -if start>end then return element not found
+
+    Time Complexity
+        -Best- O(1) if the first middle element is the target in which case only 1 comparison was done.
+
+        -Worst case-O(logN)
+
+            for every level the search area gets divided by 2
+                level 0 - N/2^0
+                level 1 - N/2^1
+                 |
+                 |
+                 level k - N/2^k
+
+            now at the last level there will only be 1 element so
+                  1 = N/2^k
+                  N=2^k
+                  logN= klog2
+                  k=logN/log2
+                  =logN base 2
+            So in worst case time complexity will be logN since we ignore constants when calculating time and space complexity.
+
+Searching in 2D Arrays
+    -If we want to search for an element in an 2D array then we can use linear search to find the element
+    -need nested for loop to iterate over the rows and columns
+    -Time Complexity for linear search
+        -Best case- 1st element is the target - so only 1 comparision- hence O(n)
+        -Worst case-last element is target or target not in array
+            in this case it will perform (n*m) comparisions where n is row count and m is col count-O(n*m)
+            if row and col both are n then the worst case time complexity will be (n*n)=O(n^2)
+
+    -Now if the matrix is sorted in some manner (Ex- row wise -{{1,2,3}{4,5,6}} or both row and col wise{{10,20,30}{15,25,35}} then we can apply binary search over the whole matrix
+    -and reduce the search space till we have the ans
+    -in this case the time complexity will be the no of comparisions needed for both rows and cols
+    -which will be O(log(n) +log(m))

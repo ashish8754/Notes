@@ -1,0 +1,42 @@
+
+Fundamentals related to java:
+
+Java -Majorly Object oriented, but also follows the rules of procedural and functional.
+
+Variables-
+its made up of ref variable and its actual value, Ex:- a = 10 , here a being the reference variable and 10 being the actual value
+ref variable are stored in the stack memory and actual value is stored in heap memory here a only points to the actual value 10 which is stored in the heap,
+now multiple ref can point to the same value in heap ,
+in which case if the actual value is changed using any of the ref values it gets updated for all the ref values pointing to it.
+-Primitives are stored in stack memory , objects are stored in heap memory.
+Ex- a = 10 ;
+    b = a ;
+    Now if we update using a or b suppose a = 12, then print b, we will get b also 12 since both were pointing to the same value in heap.
+
+Java Architecture:
+
+Java code is written in a .java file(source code) --> this code is compiled into a .class file by the compiler(Byte code)
+
+--> now this class file is interpreted by the interpreter line by line into machine code which finally runs on the machine
+-->Also in order to avoid interpreting some code which is being used at multiple places over and over java provides a Just-In-Time compiler
+    which provides machine code directly for methods which are repeated.This makes execution faster.
+
+The class file or byte code has its own language which is only readable by the interpreter in JVM.
+This intermediate .class file makes java a very portable language, as you can generate the class file and then run on any system that has JVM installed
+
+**-> Class file is platform independent but the JVM is not , i.e. JVM for each OS is different and has to be installed based on the OS.
+
+Variable typecasting:
+    Variables will be automatically upgraded to the type having higher priority when performing operations
+    Ex
+        byte a =100;
+        byte b=20;
+        int num=b*a;
+        here b and a wil be upgraded to int to perform the operations since it surpasses the size limit when performing the operation
+        similarly if there was a float in the expression then the var would be upgraded to float for the operation.
+        so which ever variable has higher priority the other variables will be converted automatically to the higher type (Usually follows the waterfall model)
+
+
+
+
+

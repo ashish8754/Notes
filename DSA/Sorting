@@ -1,0 +1,30 @@
+Sorting
+    -Sorting a given unsorted array in a specific order(asc or desc)
+    -There are many sorting methods to use based on the requirement and time complexities.
+
+Bubble Sort
+    -Its a comparision type sorting method
+    -Also known as sinking sort or exchange sort
+    -we compare each element with the next element, if the arr[i]>arr[i+1] we swap the elements
+
+    Code:
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=1;j<arr.length-i;j++)
+             {
+                if(arr[j]<arr[j-1])
+                    swap value
+             }
+             break the loop if no swaps performed.
+        }
+
+    Complexity
+        Space complexity -
+            O(1)- no extra space is needed since we are not copying the array, also known as in place sorting algorithms
+        Time complexity
+            best case- O(N)- if the array is sorted - so the loop will run atleast once and perform N-1 swaps but we ignore the contants so it O(N).
+            worst case-O(N^2)-if the array is sorted in reverse order
+
+
+Selection Sort
+    -

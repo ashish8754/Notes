@@ -1,0 +1,118 @@
+Conditionals and Loops:
+    We have different types of functions for loops and conditions-
+
+Conditionals:
+    1- If-else
+
+        if(Expression is true)
+        {
+            Execute these statements;
+        }
+        else
+        {
+            Execute these statements;
+        }
+
+    Variation- if if you just wan tto check condition and exit if not true
+
+        if(Expression)
+        {
+            Statements;
+        }
+
+    Variation - If-else if-else (For checking more than one condition)
+
+        if(Expression is true)
+        {
+            Execute these statements;
+        }
+        else if(Another expression or condition is true)
+        {
+            Execute these statements;
+        }
+        ...  // keep adding else if blocks for more conditions and finally end with else block
+        else
+        {
+            Statements;
+        }
+
+
+    2- Switch Case
+
+        If condition is for checking a constant we can use switch instead of for
+
+        Switch(Expression) {
+            case a:
+                Statements;
+                break;
+            case b:
+                Statements;
+                break;
+            default:
+                Statements;
+        }
+
+        -Duplicate cases not allowed
+        -cases have to be same type as expression, should be constant or literal
+        -break is there to terminate sequences else it will continue in to the next case
+        -default is usually put at end and specifies what to execute if none of the cases are fullfilled
+
+        Enhanced switch case
+
+            Switch(Expression){
+                case a -> statement;
+                case b -> statement;
+                default -> statement;
+            }
+
+            No need for break, its being used in the background by java
+
+Loops:
+    used to execute codes that need to be executed multiple times based on some condition
+
+    1- For loop
+
+        for(initialisation ; condition ; increment/decrement)
+        {
+            Statements;
+        }
+
+        Here the statements inside for will be executed till the condition in for has been met.
+
+        Variation- Enhanced for(For each loop)
+
+         for(datatype Item : array)
+         {
+            Statements;
+         }
+
+         Ex-
+
+         int[] numbers = {3, 9, 5, -5};
+         // for each loop
+         for (int number: numbers) {
+           System.out.println(number);
+         }
+
+    2- While and Do-While
+
+       While(Expression)
+       {
+            Statements;
+       }
+
+       Do
+       {
+            Statements;
+       }While(Expression)
+
+
+      -While block will only execute if condition is true, do while will execute atleast once regardless of the condition and then check if its true
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+Methods:
+
+    Block of code that is performing some operation which is not present in main, or code that is getting repeated
+    Syntax:
+        access_modifier return_type method_name(Arguments)
+        {
+            Code;
+            return statement;
+        }
+
+    Ex:
+        private int sum(int a, int b)
+        {
+            int sum=a+b;
+            return sum;
+
+        }
+    -Java only has pass by value, no concept of pass by reference here,copy of the actual value is passed so both the references(passed var and function var)
+     will point to the same value.
+    -For primitive datatypes it will only pass the value, for objects and references and complex datatypes  it will pass the value of the reference variable.
+    -Scope of variables
+        -Any variable defined in the block is available throughout the block, but not outside it
+        -if variable defined inside function it will be visible to any blocks present inside the function
+        -for loop also has its own scope for the var initialised in the for loop
+
+    Shadowing:
+       -if Variable is a class variable(defined inside class but outside any function) it will be available to all the functions inside the class.
+       -till a local variable of the same name is defined in any function,in which case the function will use the local variable
+       -and the class variable will become hidden for the function to any code written after the declaration of the local variable.
+
+

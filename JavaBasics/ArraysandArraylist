@@ -1,0 +1,44 @@
+Arrays :
+    -Collection of variables of a particular datatype
+    - Syntax
+        datatype[] arrayName= new datatype[size];
+
+    Here the left side is the declaration,and the right side is the actual object creation.
+    the array will be declared at compile time , but the actual memory is assigned when the new keyword is executed which happens at runtime
+    this is called dynamic memory allocation(DMA)
+    -new keyword is used to create objects
+
+    -The ref is stored in stack and the actual object is stored in heap memory as usual
+    -Now in other languages the RAM memory allocation is continuous, but in Java it depends on the JVM
+    -Since the objects are in heap and java says that heap objects are not continuous
+    -So the objects may or may not be continuous depending on the JVM (Since JVM handles the heap and stack memory)
+
+   Null:
+    -Special value literal
+    -default value for any reference variable in java
+    -cant be assigned to primitives
+
+   Object arrays:
+    -Ex - String[] arr=new String[5];
+    -this is an array of string objects, so in the heap there will be an array, which will contain the references to each individual object
+     so by default each value of the array will be null, since null is the default value for objects.
+    -arr[0] will give null if no value is assigned.
+
+   2D Arrays:
+    - datatype[][] arrayName= new datatype[size][];
+    - row size is mandatory as it will determine the memory to be used in heap, column not mandatory as we can have different row size for each row.
+    - Array of arrays.
+
+
+  ArrayList:
+    -Array of variable size
+    -Similar to vector from c++
+    -Syntax
+
+        ArrayList<Type> name=new ArrayList<>(initial_size);//initial size not mandatory since its a dynamic array
+
+    -Cant use primitive type in arraylist type, have to give the wrapper class for that primitive ,Integer for int, Character for char
+    -So now how does it dynamically increase size , so internally it has a fixed size to start with, and once the array gets filled to a certain percentage
+     it calculates a new size based on some formula which is present in ArrayList class, and then creates a new arraylist of that size and copies the elements,
+     from the old array to the new array of the new increased size.
+
