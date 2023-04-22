@@ -27,6 +27,10 @@ public class LinkedListDemo {
         Sll.insertAfter(20,5);
         Sll.printList();
         System.out.println(Sll.searchNode(20));
+        Sll.deleteAtHead();
+        Sll.printList();
+        Sll.deleteByValue(6);
+        Sll.printList();
 
     }
 }

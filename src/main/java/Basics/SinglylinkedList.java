@@ -72,6 +72,8 @@ public class SinglylinkedList {
 
     void insertAfter(int data, int previous)
     {
+        //Worst case if element is not in the list then we will tarverse the whole list atleast once so O(n);
+
             Node n=new Node();
             Node current=new Node();
             current=this.headNode;
@@ -91,7 +93,50 @@ public class SinglylinkedList {
 
     }
 
+    public void deleteAtHead()
+    {
+        //O(1) since we are deleting at head
+        if(isEmpty())
+            return;
 
+        headNode=headNode.nextNode;
+        size--;
+    }
+
+    public void deleteByValue(int data)
+    {
+
+        //In the worst case, you would have to traverse until the end of the list. This means the time complexity will be O(n)
+
+        if(isEmpty())
+        {
+            System.out.println("Empty List");
+            return;
+        }
+
+        Node current=this.headNode;
+        if(current.data==data)
+        {
+            deleteAtHead();
+            return;
+        }
+
+        Node prev=null;
+        while(current.nextNode!=null)
+        {
+
+            if(current.data==data)
+            {
+                prev.nextNode=current.nextNode;
+                size--;
+                return;
+            }
+            prev=current;
+            current=current.nextNode;
+
+        }
+        return;
+    }
 
     public void printList()
     {
