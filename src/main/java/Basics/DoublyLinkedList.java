@@ -1,57 +1,50 @@
 package Basics;
 
-public class DoublyLinkedList {
+public class DoublyLinkedList<T> {
 
 
  //NOTE: DLL with tail implementation below
 
         //Node inner class for DLL
         public class Node {
-            public int data;
+            public T data;
             public Node nextNode;
             public Node prevNode;
         }
 
-        //member variables
-        public Node headNode;
-        public Node tailNode;
-        public int size;
+    public Node headNode;
+    public Node tailNode;
+    public int size;
 
-        //constructor
-        public DoublyLinkedList() {
-            this.headNode = null;
-            this.tailNode = null; //null initially
-            this.size = 0;
-        }
+    public DoublyLinkedList() {
+        this.headNode = null;
+        this.tailNode = null;
+    }
 
-        //returns true if list is empty
-        public boolean isEmpty() {
-            if (headNode == null && tailNode == null) //checking tailNode to make sure
-                return true;
-            return false;
-        }
+    public boolean isEmpty() {
+        if (headNode == null && tailNode == null)
+            return true;
+        return false;
+    }
 
-        //getter for headNode
-        public Node getHeadNode() {
-            return headNode;
-        }
+    public Node getHeadNode() {
+        return headNode;
+    }
 
-        //getter for tailNode
-        public Node getTailNode() {
-            return tailNode;
-        }
+    public Node getTailNode() {
+        return tailNode;
+    }
 
-        //getter for size
-        public int getSize() {
-            return size;
-        }
+    public int getSize() {
+        return size;
+    }
 
-    public void insertAtHead(int data) {
+    public void insertAtHead(T data) {
         Node newNode = new Node();
         newNode.data = data;
         newNode.nextNode = this.headNode; //Linking newNode to head's nextNode
-        newNode.prevNode = null; //it will be inserted at start so prevNode will be null
-        if (!isEmpty())
+        newNode.prevNode = null;
+        if (headNode != null)
             headNode.prevNode = newNode;
         else
             tailNode = newNode;
@@ -59,29 +52,59 @@ public class DoublyLinkedList {
         size++;
     }
 
-    //insert at end of the list
-    public void insertAtEnd(int data) {
-        if (isEmpty()) { //if list is empty then insert at head
+    public void insertAtEnd(T data) {
+        if(isEmpty()) {
             insertAtHead(data);
             return;
         }
-        //make a new node and assign it the value to be inserted
         Node newNode = new Node();
         newNode.data = data;
-        newNode.nextNode = null; //it will be inserted at end so nextNode will be null
-        newNode.prevNode = tailNode; //newNode comes after tailNode so its prevNode will be tailNode
-        tailNode.nextNode = newNode; //make newNode the nextNode of tailNode
-        tailNode = newNode; //update tailNode to be the newNode
+        newNode.nextNode = null;
+        newNode.prevNode = tailNode;
+        tailNode.nextNode = newNode;
+        tailNode = newNode;
         size++;
     }
 
+    public void printList() {
+        if (isEmpty()) {
+            System.out.println("List is Empty!");
+            return;
+        }
+
+        Node temp = headNode;
+        System.out.print("List : null <- ");
+
+        while (temp.nextNode != null) {
+            System.out.print(temp.data.toString() + " <-> ");
+            temp = temp.nextNode;
+        }
+
+        System.out.println(temp.data.toString() + " -> null");
+    }
+
+    public void printListReverse() {
+        if (isEmpty()) {
+            System.out.println("List is Empty!");
+        }
+
+        Node temp = tailNode;
+        System.out.print("List : null <- ");
+
+        while (temp.prevNode != null) {
+            System.out.print(temp.data.toString() + " <-> ");
+            temp = temp.prevNode;
+        }
+
+        System.out.println(temp.data.toString() + " -> null");
+    }
 
     public void deleteAtHead() {
         if (isEmpty())
             return;
 
         headNode = headNode.nextNode;
-        if(headNode == null)
+        if (headNode == null)
             tailNode = null;
         else
             headNode.prevNode = null;
@@ -98,24 +121,6 @@ public class DoublyLinkedList {
             tailNode.nextNode = null;
         size--;
     }
-
-        //print list function
-        public void printList() {
-            if (isEmpty()) {
-                System.out.println("List is Empty!");
-                return;
-            }
-
-            Node temp = headNode;
-            System.out.print("List : null <- ");
-
-            while (temp.nextNode != null) {
-                System.out.print(temp.data + " <-> ");
-                temp = temp.nextNode;
-            }
-
-            System.out.println(temp.data + " -> null");
-        }
     }
 
 
