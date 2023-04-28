@@ -1,16 +1,16 @@
 package Basics;
 
-public class Stack {
+public class Stack<V> {
 
     private int maxSize;
     private int top;
-    private int[] arr;
+    private V[] arr;
 
     public Stack(int maxSize)
     {
         this.maxSize=maxSize;
         this.top=-1;
-        this.arr=new int[maxSize];
+        this.arr=(V[]) new Object[maxSize];
     }
 
     public int getMaxSize()
@@ -28,7 +28,7 @@ public class Stack {
         return top == maxSize-1;
     }
 
-    public void push (int val)
+    public void push (V val)
     {
         if(isFull())
         {
@@ -40,12 +40,12 @@ public class Stack {
     }
 
 
-    public int pop()
+    public V pop()
     {
         if(isEmpty())
         {
             System.out.println("Stack is empty.");
-            return -1;
+            return null;
         }
 
         return arr[top--];

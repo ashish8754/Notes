@@ -1,6 +1,6 @@
 package Basics;
 
-public class QueueImp {
+public class Queue {
 
     private int maxSize;
     private int front;
@@ -8,7 +8,7 @@ public class QueueImp {
     private int[] arr;
     private int currentSize;
 
-    public QueueImp(int size)
+    public Queue(int size)
     {
         this.maxSize=size;
         this.front=0;

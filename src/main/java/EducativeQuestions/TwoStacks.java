@@ -1,4 +1,4 @@
-package Basics;
+package EducativeQuestions;
 
 class TwoStacks<V> {
     private int maxSize;
