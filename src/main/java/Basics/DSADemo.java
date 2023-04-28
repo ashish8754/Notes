@@ -3,68 +3,36 @@ package Basics;
 public class DSADemo {
 
     public static void main(String[] args) {
-                //Stack implementation
 
-//        SinglylinkedList Sll=new SinglylinkedList();
-//        System.out.println(Sll.isEmpty());
-//        for(int i=0;i<10;i++)
-//        {
-//            Sll.insertAtEnd(i);
-//            Sll.printList();
-//        }
-//        Sll.printList();
-//        System.out.println(Sll.size);
-//        SinglylinkedList Sll2=new SinglylinkedList();
-//        System.out.println(Sll2.isEmpty());
-//        for(int i=0;i<10;i++)
-//        {
-//            Sll2.insertAtHead(i);
-//            Sll2.printList();
-//        }
-//        System.out.println(Sll2.size);
-//        Sll.insertAfter(20,5);
-//        Sll.printList();
-//        System.out.println(Sll.searchNode(20));
-//        Sll.deleteAtHead();
-//        Sll.printList();
-//        Sll.deleteByValue(6);
-//        Sll.printList();
+        DoublyLinkedList<Integer> DLL=new DoublyLinkedList<>();
+        DLL.insertAtHead(5);
+        DLL.insertAtHead(4);
+        DLL.insertAtHead(7);
 
-                //Queue implementation
-        QueueImp queue = new QueueImp(5);
-        //enqueue 2 4 6 8 10 at the end
-        queue.enqueue(2);
-        queue.enqueue(4);
-        queue.enqueue(6);
-        queue.enqueue(8);
-        queue.enqueue(10);
-        //dequeue 2 elements from the start
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-        //enqueue 12 and 14 at the end
-        queue.enqueue(12);
-        queue.enqueue(14);
+        DLL.printList();
 
-        System.out.println("Queue:");
-        while(!queue.isEmpty()){
-            System.out.print(queue.dequeue()+" ");
-        }
+        System.out.println("Graph demo ::");
+        Graph graphDemo=new Graph(5);
+        graphDemo.addEdge(0,1);
+        graphDemo.addEdge(0,2);
+        graphDemo.addEdge(1,3);
+        graphDemo.addEdge(2,3);
+        graphDemo.addEdge(2,4);
+        graphDemo.addEdge(3,4);
+        graphDemo.printGraph();
 
+        TwoStacks<Integer> tS = new TwoStacks<Integer>(5);
+        tS.push1(11);
+        tS.push1(3);
+        tS.push1(7);
+        tS.push2(1);
+        tS.push2(9);
 
+        System.out.println(tS.pop1());
+        System.out.println(tS.pop2());
+        System.out.println(tS.pop2());
+        System.out.println(tS.pop2());
+        System.out.println(tS.pop1());
     }
-
-
-//    public static String[] findBin(int number) {
-//        String[] result = new String[number];
-//        // Write -- Your -- Code
-//
-//        QueueImp binarynum=new QueueImp(number+1);
-//        binarynum.enqueue("1");
-//        for(int i=1;i==number;i++)
-//        {
-//
-//        }
-//        return result; //For number = 3 , result = {"1","10","11"};
-//    }
 }
 
