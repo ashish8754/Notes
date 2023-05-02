@@ -1,11 +1,11 @@
-package Basics;
+package EducativeQuestions;
 
-public class Queue {
+public class Queue<V> {
 
     private int maxSize;
     private int front;
     private int end;
-    private int[] arr;
+    private V[] arr;
     private int currentSize;
 
     public Queue(int size)
@@ -13,7 +13,7 @@ public class Queue {
         this.maxSize=size;
         this.front=0;
         this.end=-1;
-        this.arr=new int[maxSize];
+        this.arr=(V[]) new Object[maxSize];
         this.currentSize=0;
     }
 
@@ -34,11 +34,11 @@ public class Queue {
         return currentSize == maxSize;
     }
 
-    public int top() {
+    public V top() {
         return arr[front];
     }
 
-    public void enqueue(int value) {
+    public void enqueue(V value) {
         if (isFull())
             return;
         end = (end + 1) % maxSize; //to keep the index in range
@@ -46,11 +46,11 @@ public class Queue {
         currentSize++;
     }
 
-    public int dequeue() {
+    public V dequeue() {
         if (isEmpty())
-            return Integer.MIN_VALUE;
+            return null;
 
-        int temp = arr[front];
+        V temp = arr[front];
         front = (front + 1) % maxSize; //to keep the index in range
         currentSize--;
 

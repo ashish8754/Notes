@@ -1,7 +1,5 @@
 package EducativeQuestions;
 
-import Basics.Stack;
-
 class QueueUsingStack<V> {
 
     Stack<V> enqStack;

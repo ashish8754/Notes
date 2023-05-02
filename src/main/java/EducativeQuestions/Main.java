@@ -16,5 +16,8 @@ public class Main {
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue()); //this will output null because queue will be empty
+
+
+
     }
 }

@@ -1,5 +1,8 @@
 package Basics;
 
+import EducativeQuestions.Queue;
+import EducativeQuestions.Stack;
+
 public class DSADemo {
 
     public static void main(String[] args) {

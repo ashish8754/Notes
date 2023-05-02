@@ -1,4 +1,6 @@
-package Basics;
+package EducativeQuestions;
+
+import Basics.DoublyLinkedList;
 
 public class Graph {
 

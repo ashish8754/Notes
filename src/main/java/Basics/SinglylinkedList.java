@@ -1,8 +1,8 @@
 package Basics;
 
-public class SinglylinkedList {
+public class SinglylinkedList<T> {
     public class Node {
-        public int data;
+        public T data;
         public Node nextNode;
     }
 
@@ -30,14 +30,14 @@ public class SinglylinkedList {
         current=this.headNode;
         while(current.nextNode!=null)
         {
-            if(current.data==data)
+            if(current.data.equals(data))
                 return true;
 
             current=current.nextNode;
         }
         return false;
     }
-    public void insertAtHead(int data)
+    public void insertAtHead(T data)
     {
         Node newNode=new Node();
         newNode.data=data;
@@ -47,7 +47,7 @@ public class SinglylinkedList {
         size++;
     }
 
-    public void insertAtEnd(int data)
+    public void insertAtEnd(T data)
     {
         if(isEmpty())
         {
@@ -70,7 +70,7 @@ public class SinglylinkedList {
         }
     }
 
-    void insertAfter(int data, int previous)
+    void insertAfter(T data, T previous)
     {
         //Worst case if element is not in the list then we will tarverse the whole list atleast once so O(n);
 
@@ -103,7 +103,7 @@ public class SinglylinkedList {
         size--;
     }
 
-    public void deleteByValue(int data)
+    public void deleteByValue(T data)
     {
 
         //In the worst case, you would have to traverse until the end of the list. This means the time complexity will be O(n)
@@ -115,7 +115,7 @@ public class SinglylinkedList {
         }
 
         Node current=this.headNode;
-        if(current.data==data)
+        if(current.data.equals(data))
         {
             deleteAtHead();
             return;
@@ -125,7 +125,7 @@ public class SinglylinkedList {
         while(current.nextNode!=null)
         {
 
-            if(current.data==data)
+            if(current.data.equals(data))
             {
                 prev.nextNode=current.nextNode;
                 size--;
