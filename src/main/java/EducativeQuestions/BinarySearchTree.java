@@ -110,6 +110,92 @@ public class BinarySearchTree {
 
     }
 
+    public boolean delete(Node current,int value)
+    {
+        if(isEmpty())
+            return false;
+
+        Node parent=null;
+        while(current != null && current.getData()!=value)
+        {
+            parent=current;
+            if(current.getData()>value) {
+                current=current.getLeft();
+            }
+            else {
+                current=current.getRight();
+            }
+        }
+
+        if(current==null){
+            return false;
+        }
+        else if(current.getLeft()==null && current.getRight()==null){
+            //then its a leaf node , just remove the node;
+            //it could be just the root node also if only node in the tree is root
+            if(root.getData()== current.getData()){
+                setRoot(null);
+                return true;
+            }
+            else if(current.getData() < parent.getData()){
+                parent.setLeft(null);
+                return true;
+            }
+            else{
+                parent.setRight(null);
+                return true;
+            }
+
+        } else if (current.getLeft()==null) {
+            //meaning it has 1 child node in right sub tree
+            if(root.getData()==current.getData()){
+                setRoot(current.getRight());
+                return true;
+            }else if(current.getData()< parent.getData()){
+                parent.setLeft(current.getRight());
+                return true;
+            }else {
+                parent.setRight(current.getRight());
+                return true;
+            }
+        } else if (current.getRight()==null) {
+
+            //1 child node in left subtree
+            if(root.getData()== current.getData()){
+                setRoot(current.getLeft());
+                return true;
+            }else if(current.getData()< parent.getData()){
+                parent.setLeft(current.getLeft());
+                return true;
+            }else {
+                parent.setRight(current.getLeft());
+                return true;
+            }
+        }else {
+            //note It has 2 child nodes, so then first we find the left leaf node in the right sub tree of the current node
+            Node leftleaf=leastNode(current.getRight());
+
+            //take the value from the leftleaf
+            int temp=leftleaf.getData();
+            //now delete the left leaf node;
+            delete(root,temp);
+            //now set the current nodes value to the value taken from the left leaf node
+            current.setData(temp);
+            return true;
+
+        }
+
+    }
+
+    private Node leastNode(Node current)
+    {
+        Node temp=current;
+        while(temp.getLeft()!=null){
+            temp = temp.getLeft();
+        }
+        return temp;
+    }
+
     public void printTree(Node current)
     {
         if (current == null) return;

@@ -26,27 +26,81 @@ public class Main {
 //        bfstest.addEdge(1,4);
 //        bfstest.printGraph();
 
+//        System.out.println("");
+//        Node res=bsT.Search(14);
+//        if(res!=null)
+//            System.out.println(res.getData());
 
-        BinarySearchTree bsT = new BinarySearchTree();
+//        System.out.print("\nDeleting Node 6: ");
+//        bsT.delete(bsT.getRoot(),6);
+//        bsT.printTree(bsT.getRoot());
+//
+//        System.out.print("\nDeleting Node 15: ");
+//        bsT.delete(bsT.getRoot(),15);
+//        bsT.printTree(bsT.getRoot());
+//
+//        System.out.print("\nDeleting Node 1: ");
+//        bsT.delete(bsT.getRoot(),1);
+//        bsT.printTree(bsT.getRoot());
 
-        bsT.add(6);
-        bsT.add(4);
-        bsT.add(9);
-        bsT.add(5);
-        bsT.add(2);
-        bsT.add(8);
-        bsT.add(12);
-        bsT.add(10);
-        bsT.add(14);
 
-        bsT.printTree(bsT.getRoot());
+        BinarySearchTree BST = new BinarySearchTree();
+
+        BST.add(6);
+        BST.add(4);
+        BST.add(2);
+        BST.add(5);
+        BST.add(9);
+        BST.add(8);
+        BST.add(12);
+
+        BST.printTree(BST.getRoot());
+
 
         System.out.println("");
-        Node res=bsT.Search(14);
-        if(res!=null)
-            System.out.println(res.getData());
+        System.out.println("Preorder:");
+        preOrder(BST.getRoot());
+
+        System.out.println("");
+        System.out.println("PostOrder:");
+        postOrder(BST.getRoot());
+
+        System.out.println("");
+        System.out.println("Inorder:");
+        inOrder(BST.getRoot());
+    }
+
+    public static void preOrder(Node root)
+    {
+        if(root==null)
+            return ;
 
 
+        System.out.print(root.getData()+",");
+        preOrder(root.getLeft());
+        preOrder(root.getRight());
 
+
+    }
+
+    public static void postOrder(Node root)
+    {
+        if(root==null)
+            return;
+
+
+        postOrder(root.getLeft());
+        postOrder(root.getRight());
+        System.out.print(root.getData()+",");
+    }
+
+    public static void inOrder(Node root)
+    {
+        if(root==null)
+            return;
+
+        inOrder(root.getLeft());
+        System.out.print(root.getData()+",");
+        inOrder(root.getRight());
     }
 }
