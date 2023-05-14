@@ -1,7 +1,5 @@
 package EducativeQuestions;
 
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) {
 //        QueueUsingStack<Integer> queue = new QueueUsingStack<>(5);
@@ -54,7 +52,7 @@ public class Main {
         BST.add(8);
         BST.add(12);
 
-        BST.printTree(BST.getRoot());
+        BST.printTree(BST.getRoot());   
 
 
         System.out.println("");
@@ -70,7 +68,7 @@ public class Main {
         inOrder(BST.getRoot());
     }
 
-    public static void preOrder(Node root)
+    public static void preOrder(AVLNode root)
     {
         if(root==null)
             return ;
@@ -83,7 +81,7 @@ public class Main {
 
     }
 
-    public static void postOrder(Node root)
+    public static void postOrder(AVLNode root)
     {
         if(root==null)
             return;
@@ -94,7 +92,7 @@ public class Main {
         System.out.print(root.getData()+",");
     }
 
-    public static void inOrder(Node root)
+    public static void inOrder(AVLNode root)
     {
         if(root==null)
             return;

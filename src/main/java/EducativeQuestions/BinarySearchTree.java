@@ -2,13 +2,13 @@ package EducativeQuestions;
 
 public class BinarySearchTree {
 
-    private Node root;
+    private AVLNode root;
 
-    public Node getRoot() {
+    public AVLNode getRoot() {
         return root;
     }
 
-    public void setRoot(Node root) {
+    public void setRoot(AVLNode root) {
         this.root = root;
     }
 
@@ -59,10 +59,10 @@ public class BinarySearchTree {
         return true;
     }
 
-    public Node recursiveInsert(Node current,int value)
+    public AVLNode recursiveInsert(AVLNode current, int value)
     {
         if(current==null)
-            return new Node(value);
+            return new AVLNode(value);
 
         if(current.getData() > value)
         {
@@ -84,7 +84,7 @@ public class BinarySearchTree {
         return root==null;
     }
 
-    public Node Search(int value)
+    public AVLNode Search(int value)
     {
         if(isEmpty())
             return null;
@@ -93,7 +93,7 @@ public class BinarySearchTree {
     }
 
 
-    public Node recursiveSearch(Node current,int value)
+    public AVLNode recursiveSearch(AVLNode current, int value)
     {
         if(current==null || current.getData()==value )
             return current;
@@ -110,12 +110,12 @@ public class BinarySearchTree {
 
     }
 
-    public boolean delete(Node current,int value)
+    public boolean delete(AVLNode current, int value)
     {
         if(isEmpty())
             return false;
 
-        Node parent=null;
+        AVLNode parent=null;
         while(current != null && current.getData()!=value)
         {
             parent=current;
@@ -173,7 +173,7 @@ public class BinarySearchTree {
             }
         }else {
             //note It has 2 child nodes, so then first we find the left leaf node in the right sub tree of the current node
-            Node leftleaf=leastNode(current.getRight());
+            AVLNode leftleaf=leastNode(current.getRight());
 
             //take the value from the leftleaf
             int temp=leftleaf.getData();
@@ -187,16 +187,16 @@ public class BinarySearchTree {
 
     }
 
-    private Node leastNode(Node current)
+    private AVLNode leastNode(AVLNode current)
     {
-        Node temp=current;
+        AVLNode temp=current;
         while(temp.getLeft()!=null){
             temp = temp.getLeft();
         }
         return temp;
     }
 
-    public void printTree(Node current)
+    public void printTree(AVLNode current)
     {
         if (current == null) return;
 

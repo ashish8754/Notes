@@ -1,12 +1,12 @@
 package EducativeQuestions;
 
-public class Node {
+public class AVLNode {
 
     private int data;
-    private Node left;
-    private Node right;
+    private AVLNode left;
+    private AVLNode right;
 
-    public Node(int value)
+    public AVLNode(int value)
     {
         this.data=value;
         this.left=null;
@@ -21,19 +21,19 @@ public class Node {
         this.data = data;
     }
 
-    public Node getLeft() {
+    public AVLNode getLeft() {
         return left;
     }
 
-    public void setLeft(Node left) {
+    public void setLeft(AVLNode left) {
         this.left = left;
     }
 
-    public Node getRight() {
+    public AVLNode getRight() {
         return right;
     }
 
-    public void setRight(Node right) {
+    public void setRight(AVLNode right) {
         this.right = right;
     }
 }
