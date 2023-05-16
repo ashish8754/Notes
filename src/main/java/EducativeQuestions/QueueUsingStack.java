@@ -9,12 +9,6 @@ class QueueUsingStack<V> {
         this.enqStack=new Stack(maxSize);
         this.deqStack=new Stack(maxSize);
     }
-
-    // public boolean isEmpty()
-    // {
-    //     return enqStack.isEmpty();
-    // }
-
     public void enqueue(V value){
         // Write -- Your -- Code
         if(enqStack.isFull())
@@ -26,18 +20,6 @@ class QueueUsingStack<V> {
         // Write -- Your -- Code
         if(isEmpty())
             return null;
-
-//        while(!enqStack.isEmpty())
-//        {
-//            deqStack.push(enqStack.pop());
-//        }
-//        int result=deqStack.pop();
-//
-//        while(!deqStack.isEmpty())
-//        {
-//            enqStack.push(deqStack.pop());
-//        }
-//        return result;
 
             if(deqStack.isEmpty())
             {
@@ -55,5 +37,23 @@ class QueueUsingStack<V> {
     public boolean isEmpty(){
         //Write -- Your -- Code
         return enqStack.isEmpty() && deqStack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+
+        QueueUsingStack<Integer> queue = new QueueUsingStack<>(5);
+
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        queue.enqueue(4);
+        queue.enqueue(5);
+
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue()); //this will output null because queue will be empty
     }
 }
