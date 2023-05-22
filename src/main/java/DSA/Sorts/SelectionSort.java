@@ -1,4 +1,4 @@
-package DSA;
+package DSA.Sorts;
 
 public class SelectionSort {
 
