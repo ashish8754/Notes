@@ -9,6 +9,9 @@ public class BinarySearch {
 
     }
 
+    public BinarySearch() {
+    }
+
     static int binarySearch(int[] arr, int target)
     {
 
