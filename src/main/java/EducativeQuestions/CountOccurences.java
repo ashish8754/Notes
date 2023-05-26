@@ -12,16 +12,16 @@ public class CountOccurences {
         if(index==-1)
             return 0;
 
-        //note else initialise count to 1 since atleast 1 occurence is there
+        //note else initialise count to 1 since atleast 1 occurrence is there
         int count=1;
         int start=index-1;
-        //note now since its a sorted array all the occuerences will be together so we ccheck in left and right half for other occurences
+        //note now since its a sorted array all the occurrences will be together so we check in left and right half for other occurences
         while(start>=0 && arr[start]==key){
             count++;
             start--;
-        }
+}
 
-        int end=index+1;
+        int end=index+  1;
         while(end<arr.length && arr[end]==key){
             count++;
             end++;
@@ -37,6 +37,7 @@ public class CountOccurences {
 
 
         //note Modifying the binarySearch to find first and last occurrences of the key,then return res2-res1+1 to get total occurrences
+        //note Time Complexity: O(logn)
 
         while(start<=end){
             mid=(start+end)/2;
