@@ -3,8 +3,8 @@ package DSA;
 public class SearchinRotatedArray {
 
     public static void main(String[] args) {
-    int[] arr={5,1,3};
-    int target=5;
+    int[] arr={7, 8, 9, 0, 3, 5, 6};
+    int target=3;
     int ans=search(arr,target);
     System.out.println(ans);
     }

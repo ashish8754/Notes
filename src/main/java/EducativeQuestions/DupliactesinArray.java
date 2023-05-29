@@ -27,6 +27,20 @@ public class DupliactesinArray {
         return duplicates;
     }
 
+    public int findSecondMaximum(int[] arr)
+    {
+        int max=Integer.MIN_VALUE;
+        int secMax=max;
+        // Write - Your - Code
+        for(int i=0;i<arr.length;i++){
+
+            if(arr[i] > max)
+                secMax=max;
+                max=arr[i];
+        }
+        return secMax;
+    }
+
     public static void main(String[] args) {
         int arr[] = {
                 7,

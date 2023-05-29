@@ -1,5 +1,7 @@
 package EducativeQuestions;
 
+import java.util.HashSet;
+
 public class SLL<T> {
 
     public class Node {
@@ -161,6 +163,30 @@ public class SLL<T> {
             }
             prevNode = currentNode;
             currentNode = currentNode.nextNode;
+        }
+    }
+
+    public void removeDuplicatesWithHashing() {
+        Node current = this.headNode;
+        Node prevNode = this.headNode;
+        //will store all the elements that we observe once
+        HashSet<T> visitedNodes = new HashSet<T>();
+
+        if (!isEmpty() && current.nextNode != null) {
+            while (current != null) {
+                //check if already visited then delete this node
+                if (visitedNodes.contains(current.data)) {
+                    //deleting the node by undating the pointer of previous node
+                    prevNode.nextNode = current.nextNode;
+                    current = current.nextNode;
+                } else {
+                    //if node was not already visited then add it to the visited set
+                    visitedNodes.add(current.data);
+                    //moving on to next element in the list
+                    prevNode = current;
+                    current = current.nextNode;
+                }
+            }
         }
     }
 }

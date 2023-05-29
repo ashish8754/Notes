@@ -1,4 +1,43 @@
-package DSA.Sorts;public class MergeSort {
+package EducativeQuestions;
+
+public class StackSort {
+
+    public static void main(String[] args) {
+        Stack<Integer> input=new Stack<>(7);
+        input.push(23);
+        input.push(60);
+        input.push(12);
+        input.push(42);
+        input.push(4);
+        input.push(97);
+        input.push(2);
+
+        sortStack(input);
+
+        while(!input.isEmpty()){
+            System.out.println(input.pop());
+        }
+    }
+
+    public static void sortStack(Stack<Integer> stack) {
+        // Write -- Your -- Code
+        if(stack.isEmpty())
+            return;
+        //Stack<Integer> tempStack=new Stack<>();
+        int[] result=new int[stack.getMaxSize()];
+        int i=0;
+        //transferring the values to array from stack
+        while(!stack.isEmpty()){
+            result[i]=stack.pop();
+            i++;
+        }
+        mergeSort(result,0,result.length-1);
+        for(int ele:result){
+            stack.push(ele);
+        }
+
+
+    }
 
     public static void merge(int arr[], int left, int mid, int right){
 
@@ -68,25 +107,12 @@ package DSA.Sorts;public class MergeSort {
 
         if(rightIndex>leftIndex)
         {
-           int mid=leftIndex + (rightIndex-leftIndex)/2;
+            int mid=leftIndex + (rightIndex-leftIndex)/2;
             //note recursively split the array into left and right
-           mergeSort(arr,leftIndex,mid);
-           mergeSort(arr,mid+1,rightIndex);
+            mergeSort(arr,leftIndex,mid);
+            mergeSort(arr,mid+1,rightIndex);
             //note then we proceed to merge where the actual sorting happens
-           merge(arr,leftIndex,mid,rightIndex);
-        }
-
-    }
-
-    public static void main(String[] args) {
-        int arr[] = {23,60,12,42,4,97,2};
-        //int[] arr={};
-        int arrSize = 10;
-        mergeSort(arr, 0, arr.length - 1);
-        System.out.println("MergeSort");
-        for(int ele:arr)
-        {
-            System.out.println(ele+ ",");
+            merge(arr,leftIndex,mid,rightIndex);
         }
 
     }
