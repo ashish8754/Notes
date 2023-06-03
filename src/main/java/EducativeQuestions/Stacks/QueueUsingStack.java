@@ -1,4 +1,4 @@
-package EducativeQuestions;
+package EducativeQuestions.Stacks;
 
 class QueueUsingStack<V> {
 

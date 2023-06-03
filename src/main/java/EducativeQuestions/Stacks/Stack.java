@@ -1,4 +1,4 @@
-package EducativeQuestions;
+package EducativeQuestions.Stacks;
 
 public class Stack<V> {
 

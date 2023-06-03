@@ -1,7 +1,7 @@
 package Basics;
 
 import EducativeQuestions.Queue;
-import EducativeQuestions.Stack;
+import EducativeQuestions.Stacks.Stack;
 
 public class DSADemo {
 

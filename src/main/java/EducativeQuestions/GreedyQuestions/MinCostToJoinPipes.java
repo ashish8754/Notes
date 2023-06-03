@@ -1,4 +1,4 @@
-package EducativeQuestions;
+package EducativeQuestions.GreedyQuestions;
 
 import DSA.MinHeap;
 

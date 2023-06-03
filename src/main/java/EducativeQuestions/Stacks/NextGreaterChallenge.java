@@ -1,4 +1,6 @@
-package EducativeQuestions;
+package EducativeQuestions.Stacks;
+
+import EducativeQuestions.Stacks.Stack;
 
 import java.util.Arrays;
 
